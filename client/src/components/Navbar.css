@@ -1,46 +1,25 @@
-/* nav {
-    border: 1px solid #ccc;
+h2 {
+  font-family: "Lucida Sans";
+  font-style: italic;
 }
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-*/
 nav li {
-    display: inline-block;
-    margin: 0 5px;
+  display: inline-block;
+  margin: 0 5px;
 }
-/*
-nav a {
-    padding: 10px;
-} */
 
-/* 'active' class automatically added by React Router */
-/* nav a.active {
-    background-color: rgb(175, 209, 207);
-} */
-
-
-/* .Navbar {
-    position: fixed;
-    z-index: 2;
-    top: 40px;
-    right: 5%;
-} */
-.Navbar  {
-    /* this is the stretching navigation background */
-    padding-top: 15px;
-    position: right;
-    z-index: auto;
-    top: auto;
-    right: 0;
-    width: 60px;
-    height: 60px;
-    border-radius: 30px;
-    background: #9acd91;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-    transition: height 0.2s, box-shadow 0.2s;
-    height: 100%;
-    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
+.Navbar {
+  /* this is the stretching navigation background */
+  padding-top: 15px;
+  position: right;
+  z-index: auto;
+  top: auto;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  background: #9acd91;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  transition: height 0.2s, box-shadow 0.2s;
+  height: 100%;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
 }
