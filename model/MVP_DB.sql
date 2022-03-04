@@ -38,7 +38,7 @@ CREATE TABLE bookclub(
     `name` VARCHAR(255) NOT NULL,
     `category` VARCHAR(255) NOT NULL,
     `num_members` INT NOT NULL,
-    `current_book` INT NOT NULL,
+    `current_book` INT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (current_book) REFERENCES books(id)
 );
