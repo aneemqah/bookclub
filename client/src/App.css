@@ -5,31 +5,131 @@
   padding-top: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
+/********** FORM STYLES ************/
+
+body {
+  display: flex;
   min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.form-container {
+  width: 360px;
+  background-color: white;
+  margin: auto;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  padding: 10px;
+}
+
+.bookclub-form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-evenly;
+  padding: 10px;
+}
+
+.form-field {
+  padding: 15px;
+  font-size: 16px;
+  border: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+input {
+  margin: 5px;
+}
+
+button {
+  background: #4caf50;
   color: white;
+  cursor: pointer;
+  margin-top: 5px;
+}
+button:disabled {
+  cursor: default;
 }
 
-.App-link {
-  color: #61dafb;
+.success-message {
+  font-family: "Roboto", sans-serif;
+  background-color: #3f89f8;
+  padding: 15px;
+  color: white;
+  margin-bottom: 5px;
 }
 
-.ul{
-  list-style-type: none;
+/********** NAV STYLES ************/
+.nav-container {
+  width: 360px;
+  height: 45px;
+  background-color: white;
+  margin: auto;
+  padding: 10px;
+  background-color: lightskyblue;
 }
 
-.li {
-  color: #FFFFFF;
+.link {
   text-decoration: none;
+  color: white;
+  font-weight: bold;
 }
 
-.navlinks {
+a {
   text-decoration: none;
   color: black;
+}
+
+/********** BOOKCLUB SEARCH STYLES ************/
+
+.Bookclubsearch {
+  width: 360px;
+  background-color: white;
+  margin: auto;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  padding: 10px;
+}
+
+.login-container {
+  width: 360px;
+  background-color: white;
+  margin: auto;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  padding: 10px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 10px;
+}
+
+h4 {
+  font-family: "Lucida Sans";
+}
+
+.quote {
+  display: inline-flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #d4341c;
+  margin: 1.5em 30px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+  box-shadow: 5px 5px 5px #d2cfc6;
+}
+blockquote:before {
+  color: #d4341c;
+  content: open-quote;
+  font-size: 3em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+cite {
+  flex: 2 2 50%;
 }
