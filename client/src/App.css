@@ -65,6 +65,7 @@ button:disabled {
   margin: auto;
   padding: 10px;
   background-color: lightskyblue;
+  margin-bottom: 10px;
 }
 
 .link {
@@ -78,14 +79,22 @@ a {
   color: black;
 }
 
-/********** BOOKCLUB SEARCH ************/
+/********** BOOK SEARCH ************/
 
-.Bookclubsearch {
-  width: 360px;
+.Booksearch {
+  width: 600px;
   background-color: white;
   margin: auto;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
   padding: 10px;
+}
+
+.book-preview {
+  display: flex;
+}
+
+.book-link {
+  margin-top: 20px;
 }
 
 /********** LOGIN ************/
