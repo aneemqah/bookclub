@@ -12,7 +12,7 @@ const CreateBookclub = (props) => {
   const [submitted, setSubmitted] = useState(false);
 
   const handleFormInputChange = (event) => {
-    console.log("i am the change", event);
+    // console.log("i am the change", event);
     // extract name and value prop from event.target object
     const { name, value } = event.target;
     // // then call the setFormValues function, this returns an object that has the previous state merged with the new value that we get from the event.target property.

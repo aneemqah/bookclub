@@ -78,7 +78,7 @@ a {
   color: black;
 }
 
-/********** BOOKCLUB SEARCH STYLES ************/
+/********** BOOKCLUB SEARCH ************/
 
 .Bookclubsearch {
   width: 360px;
@@ -87,6 +87,8 @@ a {
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
   padding: 10px;
 }
+
+/********** LOGIN ************/
 
 .login-container {
   width: 360px;
@@ -106,6 +108,8 @@ a {
 h4 {
   font-family: "Lucida Sans";
 }
+
+/********** BLOCKQUOTE ON BOOK SEARCH ************/
 
 .quote {
   display: inline-flex;
@@ -132,4 +136,81 @@ blockquote:before {
 
 cite {
   flex: 2 2 50%;
+}
+
+/********** BOOKCLUB ************/
+
+.btn-delete {
+  background-color: #ffc107;
+  border-color: #ffc107;
+  border-radius: 3px;
+  color: black;
+  font-size: small;
+}
+
+.btn-edit {
+  color: black;
+  background-color: #0dcaf0;
+  border-color: #0dcaf0;
+  border-radius: 3px;
+  font-size: small;
+  margin-right: 4px;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: flex-end;
+}
+.navlink {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10px;
+  padding: 5px;
+}
+
+.bcname {
+  margin-right: 10px;
+  padding-top: 5px;
+}
+
+img {
+  height: 150px;
+  padding: 10px;
+}
+
+/* MODIFY BOOKCLUB STYLES */
+
+.modify-bc {
+  width: 360px;
+  background-color: white;
+  margin: auto;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  padding: 10px;
+}
+
+.BookClubView {
+  width: 360px;
+  background-color: white;
+  margin: auto;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  padding: 10px;
+}
+
+.book-img {
+  justify-content: center;
+}
+
+.BookView {
+  width: 360px;
+  background-color: white;
+  margin: auto;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  padding: 10px;
+}
+
+.btn-update {
+  color: #fff;
+  background-color: #198754;
+  border-color: #198754;
+  border-radius: 4px;
 }
