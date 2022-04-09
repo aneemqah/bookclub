@@ -1,26 +1,20 @@
-import { Routes, Route, Link } from "react-router-dom";
-import { useState, useEffect } from "react";
-import "./App.css";
+import { Routes, Route, Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import './App.css';
 
-import Navbar from "./components/Navbar";
-import Bookclubsearch from "./Views/Bookclubsearch";
-import Bookclub from "./Views/Bookclub";
-import Booksearch from "./Views/Booksearch";
-import Book from "./Views/Book";
-import Error404View from "./Views/Error404View";
-import Login from "./Views/Login";
-import CreateBookclub from "./Views/CreateBookclub";
-import ModifyBookclub from "./Views/ModifyBookclub";
+import Navbar from './components/Navbar';
+import Bookclubsearch from './Views/Bookclubsearch';
+import Bookclub from './Views/Bookclub';
+import Booksearch from './Views/Booksearch';
+import Book from './Views/Book';
+import Error404View from './Views/Error404View';
+import Login from './Views/Login';
+import CreateBookclub from './Views/CreateBookclub';
+import ModifyBookclub from './Views/ModifyBookclub';
 
 function App() {
-  // make sure intital state is an empty array
   const [bookClubs, setBookClubs] = useState([]);
   const [books, setBooks] = useState([]);
-
-  // state to store list of bookclubs
-  // fetch bookclub back end
-
-  // GET BOOKCLUB
 
   useEffect(() => {
     getBookclubs();
@@ -28,7 +22,7 @@ function App() {
 
   async function getBookclubs() {
     try {
-      let response = await fetch("/bookclub");
+      let response = await fetch('/bookclub');
       console.log(response);
       if (response.ok) {
         let bookClubs = await response.json();
@@ -41,15 +35,13 @@ function App() {
     }
   }
 
-  // GET BOOKS
-
   useEffect(() => {
     getBooks();
   }, []);
 
   async function getBooks() {
     try {
-      let response = await fetch("/books");
+      let response = await fetch('/books');
       console.log(response);
       if (response.ok) {
         let books = await response.json();
@@ -62,24 +54,20 @@ function App() {
     }
   }
 
-  // CREATE A NEW BOOKCLUB - this uses the POST route in bookclub.js
-  // It excepts an object with the following keys & values : name, category, num_members, current_book
-  // In our function below we are allowing the user two arguments to pass in and store this as an object
   const addBookclub = async (newbc, cat) => {
-    // need to pass these value as obj see bookclub.js post route
     let newBookclub = {
       name: newbc,
       category: cat,
-      num_members: 1, // automatically set
-      current_book: null, // automatically set
+      num_members: 1,
+      current_book: null,
     };
     let options = {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(newBookclub),
     };
     try {
-      let response = await fetch("/bookclub", options);
+      let response = await fetch('/bookclub', options);
       if (response.ok) {
         let bookClubs = await response.json();
         setBookClubs(bookClubs);
@@ -91,10 +79,9 @@ function App() {
     }
   };
 
-  // DELETE A BOOKCLUB
   const deleteBookclub = async (id) => {
     let options = {
-      method: "DELETE",
+      method: 'DELETE',
     };
     try {
       let response = await fetch(`/bookclub/${id}`, options);
@@ -102,19 +89,17 @@ function App() {
         let data = await response.json();
         setBookClubs(data);
       } else {
-        console.log("Server error:", response.statusText);
+        console.log('Server error:', response.statusText);
       }
     } catch (err) {
-      console.log("Network error:", err.message);
+      console.log('Network error:', err.message);
     }
   };
 
-  // MODIFY A BOOKCLUB
-
   const modifyBookclub = async (id, name) => {
     let options = {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json" },
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name: name }),
     };
     try {
@@ -123,10 +108,10 @@ function App() {
         let data = await response.json();
         setBookClubs(data);
       } else {
-        console.log("Server error:", response.statusText);
+        console.log('Server error:', response.statusText);
       }
     } catch (err) {
-      console.log("Network error:", err.message);
+      console.log('Network error:', err.message);
     }
   };
 

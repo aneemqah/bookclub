@@ -1,13 +1,12 @@
-import React from "react";
-import { Link, useParams } from "react-router-dom";
-import "../App.css";
+import React from 'react';
+import { Link, useParams } from 'react-router-dom';
+import '../App.css';
 
-import Error404View from "./Error404View";
+import Error404View from './Error404View';
 
 export default function Book(props) {
-  let { id } = useParams(); // get user ID from URL
+  let { id } = useParams();
   let book = props.books.find((b) => b.id === Number(id));
-  // let book = {name: "Meena"}
 
   if (!book) {
     return <Error404View />;
@@ -15,7 +14,7 @@ export default function Book(props) {
 
   return (
     <div className="BookView">
-      <div className="card mb-3" style={{ maxWidth: "640px" }}>
+      <div className="card mb-3" style={{ maxWidth: '640px' }}>
         <div className="row g-0">
           <div className="col-md-4">
             <a href={book.gr_URL} target="_blank" rel="noopener noreferrer">

@@ -1,29 +1,6 @@
-var express = require("express");
+var express = require('express');
 var router = express.Router();
-const db = require("../model/helper");
-
-// router.get('/', async (req, res) => {
-//     let sql = 'SELECT * FROM bookclub';  // all SELECTs begin with this...
-//     db(sql)
-//         .then(results => {
-//             res.send(results.data);
-//         })
-//         .catch(err => res.status(500).send(err));
-//     });
-
-/*
-Using query parameters to filter a "GET all" route
-​
-This URL:
-GET /cats?breed=manx&maxAge=5
-Will generate this SQL:
-SELECT * FROM cats WHERE breed = 'manx' AND age <= 5;
-*/
-
-// GET BOOK FILTER
-/**
- * Helpers
- **/
+const db = require('../model/helper');
 
 function makeWhereFromFilters(q) {
   let filters = [];
@@ -38,14 +15,13 @@ function makeWhereFromFilters(q) {
     filters.push(`current_book = '${q.current_book}'`);
   }
 
-  // Return all filters joined by AND
-  return filters.join(" AND ");
+  return filters.join(' AND ');
 }
 
-router.get("/", async (req, res) => {
-  let sql = "SELECT * FROM bookclub"; // all SELECTs begin with this...
-  let where = makeWhereFromFilters(req.query); // make optional WHERE-part from query parameters
-  // If query parameters were passed, append them to the SELECT statement
+router.get('/', async (req, res) => {
+  let sql = 'SELECT * FROM bookclub';
+  let where = makeWhereFromFilters(req.query);
+
   if (where) {
     sql += ` WHERE ${where}`;
   }
@@ -56,15 +32,14 @@ router.get("/", async (req, res) => {
     .catch((err) => res.status(500).send(err));
 });
 
-// GET BOOKCLUB BY ID
-router.get("/:id", async (req, res) => {
+router.get('/:id', async (req, res) => {
   let id = req.params.id;
   let sql = `SELECT * FROM bookclub WHERE id = ${id}`;
 
   try {
     let result = await db(sql);
     if (result.data.length === 0) {
-      res.status(404).send({ error: "Bookclub not found!" });
+      res.status(404).send({ error: 'Bookclub not found!' });
     } else {
       res.send(result.data[0]);
     }
@@ -73,22 +48,20 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-// CREATE A NEW BOOKCLUB
-router.post("/", async (req, res) => {
+router.post('/', async (req, res) => {
   let { name, category, num_members, current_book } = req.body;
   let sql = `insert into bookclub (name, category, num_members, current_book) values ('${name}', '${category}', ${num_members}, ${current_book})`;
 
   try {
     await db(sql);
-    let result = await db("select * from bookclub");
+    let result = await db('select * from bookclub');
     res.status(201).send(result.data);
   } catch (err) {
     res.status(500).send({ error: err.message });
   }
 });
 
-// EDIT BOOKCLUB BY ID [PUT updates the entire resource.]
-router.put("/:id", async (req, res) => {
+router.put('/:id', async (req, res) => {
   let id = req.params.id;
   let { name, category, num_members, current_book } = req.body;
   let sqlCheckID = `SELECT * FROM bookclub WHERE id = ${id}`;
@@ -97,10 +70,10 @@ router.put("/:id", async (req, res) => {
   try {
     let result = await db(sqlCheckID);
     if (result.data.length === 0) {
-      res.status(404).send({ error: "Bookclub not found!" });
+      res.status(404).send({ error: 'Bookclub not found!' });
     } else {
       await db(sqlUpdate);
-      let result = await db("select * from bookclub");
+      let result = await db('select * from bookclub');
       res.status(201).send(result.data);
     }
   } catch (err) {
@@ -108,8 +81,7 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-// MODIFY A BOOKCLUB BY ID [PATCH is a partial update to the resource.]
-router.patch("/:id", async (req, res) => {
+router.patch('/:id', async (req, res) => {
   let id = req.params.id;
   let { name, category, num_members, current_book } = req.body;
   let sqlCheckID = `SELECT * FROM bookclub WHERE id = ${id}`;
@@ -118,10 +90,10 @@ router.patch("/:id", async (req, res) => {
   try {
     let result = await db(sqlCheckID);
     if (result.data.length === 0) {
-      res.status(404).send({ error: "Bookclub not found!" });
+      res.status(404).send({ error: 'Bookclub not found!' });
     } else {
       await db(sqlUpdate);
-      let result = await db("select * from bookclub");
+      let result = await db('select * from bookclub');
       res.status(201).send(result.data);
     }
   } catch (err) {
@@ -129,18 +101,17 @@ router.patch("/:id", async (req, res) => {
   }
 });
 
-// DELETE BOOKCLUB
-router.delete("/:id", async (req, res) => {
+router.delete('/:id', async (req, res) => {
   let id = req.params.id;
   let sqlCheckID = `SELECT * FROM bookclub WHERE id = ${id}`;
   let sqlDelete = `DELETE FROM bookclub WHERE id = ${id}`;
   try {
     let result = await db(sqlCheckID);
     if (result.data.length === 0) {
-      res.status(404).send({ error: "Bookclub not found!" });
+      res.status(404).send({ error: 'Bookclub not found!' });
     } else {
       await db(sqlDelete);
-      let result = await db("select * from bookclub");
+      let result = await db('select * from bookclub');
       res.status(201).send(result.data);
     }
   } catch (err) {
