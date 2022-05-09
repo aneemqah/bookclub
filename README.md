@@ -4,7 +4,7 @@ A full stack app that allows book enthusiasts to connect with other bookworms.
 
 ## Feature extension
  
-This was my team mates project for which I created a feature extension i.e added functionally to create a new bookclub. Implemented new  backend route so that users can create bookclub, edit and delete a bookclub. Also, added Bootstrap to some of the page views.
+This was my team mates project for which I created a feature extension for. Implemented new  backend route so that users can create bookclub, edit and delete a bookclub. Also, added Bootstrap to some of the page views.
 
 ## Approach
 
