@@ -6,7 +6,7 @@ A full stack app that allows book enthusiasts to connect with other bookworms.
  
 Implemented new backend route so that users can create bookclub, edit and delete a bookclub. Also, added Bootstrap to some of the page views.
 
-## Approach
+### Approach
 
 1. Set up initial meeting with the project owner to uderstand & document requirements
 2. Add tasks on Trello board
