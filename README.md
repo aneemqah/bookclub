@@ -4,7 +4,7 @@ A full stack app that allows book enthusiasts to connect with other bookworms.
 
 ## Feature extension
  
-This was my team mates project for which I created a feature extension for. Implemented new  backend route so that users can create bookclub, edit and delete a bookclub. Also, added Bootstrap to some of the page views.
+Implemented new backend route so that users can create bookclub, edit and delete a bookclub. Also, added Bootstrap to some of the page views.
 
 ## Approach
 
@@ -22,11 +22,14 @@ This was my team mates project for which I created a feature extension for. Impl
 
 ### Run app locally
 
-1. Run `npm install` in project directory
+1. Run `npm install`
 2. Run `npm start` in client folder
 3. Run `npm start` in root directory to start server
 
 
+<hr> 
 
+Acknowledgements
 
+This is a student project that was created at CodeOp, a full stack development bootcamp in Barcelona.
 
