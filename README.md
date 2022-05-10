@@ -27,6 +27,12 @@ Implemented new backend route so that users can create bookclub, edit and delete
 3. Run `npm start` in root directory to start server
 
 
+### Screenshots
+
+<img width="500" src="https://user-images.githubusercontent.com/95934430/167720294-6e4dddea-9e94-4c2a-8522-d1a82efd8d4b.png">
+
+
+
 <hr> 
 
 Acknowledgements
